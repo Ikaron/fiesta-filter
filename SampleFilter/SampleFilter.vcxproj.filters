@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SampleFilter.cpp">
+    <ClCompile Include="src\SampleFilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Hooks.hpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
