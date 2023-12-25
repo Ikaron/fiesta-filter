@@ -70,7 +70,7 @@ public:
 	bool isClientToServer;
 	std::vector<char> data;
 
-	QueuedPacket(bool isClientToServer) : isClientToServer(isClientToServer), data(data) {}
+	QueuedPacket(bool isClientToServer) : isClientToServer(isClientToServer), data() {}
 	QueuedPacket(bool isClientToServer, const std::vector<char>& data) : isClientToServer(isClientToServer), data(data) {}
 	QueuedPacket(const QueuedPacket&) = default;
 	QueuedPacket(QueuedPacket&&) = default;
