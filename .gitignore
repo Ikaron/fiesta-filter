@@ -1,0 +1,6 @@
+﻿.vs/
+bin/x64/
+FilterLib/x64/
+MultiFilter/
+SampleFilter/x64/
+SampleFilter/Logs/
