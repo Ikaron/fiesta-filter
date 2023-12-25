@@ -121,10 +121,12 @@ public:
 	void Write(int64_t);
 	void Write(float);
 	void Write(double);
+	void WriteRawStr(std::string_view);
 	void WriteCStr(std::string_view);
 	void WriteShortStr(std::string_view);
 	void WriteFixedStr(std::string_view, size_t);
 
 	void CopyTo(std::vector<char>&);
+	void AppendTo(std::vector<char>&);
 	const std::vector<char>& GetBuffer() const;
 };

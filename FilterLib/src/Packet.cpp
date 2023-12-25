@@ -352,6 +352,11 @@ void PacketWriter::Write(double val)
 	Write<double>(val);
 }
 
+void PacketWriter::WriteRawStr(std::string_view val)
+{
+	WriteFixedStr(val, val.length());
+}
+
 void PacketWriter::WriteCStr(std::string_view val)
 {
 	Write(val.data(), val.length());
@@ -382,6 +387,13 @@ void PacketWriter::CopyTo(std::vector<char>& out)
 {
 	out.resize(buffer.size());
 	memcpy(out.data(), buffer.data(), buffer.size());
+}
+
+void PacketWriter::AppendTo(std::vector<char>& out)
+{
+	size_t startIndex = out.size();
+	out.resize(startIndex + buffer.size());
+	memcpy(out.data() + startIndex, buffer.data(), buffer.size());
 }
 
 const std::vector<char>& PacketWriter::GetBuffer() const
