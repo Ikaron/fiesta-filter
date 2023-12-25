@@ -30,7 +30,7 @@ To start a new project that uses the library, simply create a new project (eithe
 
 ## Usage
 
-To use the library, first either build the SampleFilter project or your own custom project. Then start the resulting binary with the correct command line arguments
+To use the library, first either build the SampleFilter project or your own custom project. Then start the resulting binary with the correct command line arguments.
 
 ### Command Line Arguments
 
@@ -40,22 +40,30 @@ You can automatically log information to the console or to a file. Which types o
 * Warning is for non-critical problems
 * Error is for significant erros with the functioning of the program, e.g. that terminate a connection
 
-> --log-to-console=Info|Status|Warning|Error|None - Default: Status
-> --log-to-file=Info|Status|Warning|Error|None - Default: Status
+```
+--log-to-console=Info|Status|Warning|Error|None - Default: Status
+--log-to-file=Info|Status|Warning|Error|None - Default: Status
+```
 
 Example
 
-> --log-to-console=Info
+```
+--log-to-console=Info
+```
 
 For server-side use, you need to set the path to the ServerInfo.txt used by the server.
 
-> "--server-config=My Path/To/ServerInfo.txt"
+```
+"--server-config=My Path/To/ServerInfo.txt"
+```
 
 For client-side use, you instead need to provide the ip and port to the login server, as well as the local port to bind to (that the client will connect to, usually 9010.
 
-> --bind-port=9010
-> --server-ip=123.123.123.123
-> --server-port=9010
+```
+--bind-port=9010
+--server-ip=123.123.123.123
+--server-port=9010
+```
 
 ### ServerInfo
 
