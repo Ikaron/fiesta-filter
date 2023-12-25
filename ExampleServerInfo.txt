@@ -1,0 +1,124 @@
+; Server info for RELEASE SERVICE
+; 2007.4 By Blacksky
+; 2015.8 Modified by John (Gamigo)
+; 2018.12 Modified by TeamNG
+
+#DEFINE NATION_NAME
+  <STRING>
+#ENDDEFINE
+
+#DEFINE WORLD_NAME
+  <INTEGER>
+  <STRING>
+  <STRING>
+#ENDDEFINE
+        
+#DEFINE SERVER_INFO
+  <STRING>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+  <STRING>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+#ENDDEFINE
+
+#DEFINE ODBC_INFO
+  <STRING>
+  <INTEGER>
+  <INTEGER>
+  <STRING>
+  <STRING>
+#ENDDEFINE
+        
+#DEFINE TUNNEL_BINDING
+  <INTEGER>
+  <STRING>
+#ENDDEFINE
+        
+#DEFINE TUNNEL_INFO
+  <STRING>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+  <INTEGER>
+#ENDDEFINE
+
+
+NATION_NAME  "EU_US_REAL"
+
+WORLD_NAME 0, "INITIO",   "../9Data/Shine"
+
+; Tunnels with this <BINDING_ID> are located at <IP>, should be your public IP
+; All tunneled servers can run on 127.0.0.1
+; If all your servers run on the same machine, you don't need to port-forward server ports, ONLY tunnel ports!
+TUNNEL_BINDING 0, "86.16.99.186"
+
+; Example TUNNEL_INFO
+; TUNNEL_INFO      <NAME>, <TARGET_SERVER_TYPE>, <TARGET_WORLD>, <TARGET_ZONE>, <BINDING_ID>, <PORT>
+; TUNNEL_INFO  "PG_Login",                    4,              0,             0,            0,   9010
+
+; Login ------------------------------------------------------------------------------------------
+SERVER_INFO  "PG_Login",     4, 0, 0,20,  "127.0.0.1",   9012,  100,   200  ; From Client
+SERVER_INFO  "PG_Login",     4, 0, 0, 5,  "127.0.0.1",   9011,  100,    50  ; From World manager
+SERVER_INFO  "PG_Login",     4, 0, 0, 8,  "127.0.0.1",   9015,    1,    30  ; From OPTOOL
+TUNNEL_INFO  "PG_Login",     4, 0, 0,               0,       9010
+
+; Manager ----------------------------------------------------------------------------------------
+SERVER_INFO  "PG_W00_WM",    5, 0, 0,20,  "127.0.0.1",   9110,  100,  2500  ; From Client
+SERVER_INFO  "PG_W00_WM",    5, 0, 0, 6,  "127.0.0.1",   9111,  100,   100  ; From Zone
+SERVER_INFO  "PG_W00_WM",    5, 0, 0, 8,  "127.0.0.1",   9115,  100,    30  ; From OPTOOL
+TUNNEL_INFO  "PG_W00_WM",    5, 0, 0,               0,      10110
+
+; World 00 --------------------------------------------------------------------------------------
+SERVER_INFO  "PG_W00_Z00",   6, 0, 0,20,  "127.0.0.1",   9210,  100,  1700  ; From Client
+SERVER_INFO  "PG_W00_Z00",   6, 0, 0, 8,  "127.0.0.1",   9211,  100,    30  ; From OPTOOL
+SERVER_INFO  "PG_W00_Z00",   6, 0, 0, 6,  "127.0.0.1",   9218,    1,    30  ; From Zone
+TUNNEL_INFO  "PG_W00_Z00",   6, 0, 0,               0,      10210
+
+SERVER_INFO  "PG_W00_Z01",   6, 0, 1,20,  "127.0.0.1",   9212,  100,  1700  ; From Client
+SERVER_INFO  "PG_W00_Z01",   6, 0, 1, 8,  "127.0.0.1",  9213,  100,    30  ; From OPTOOL
+SERVER_INFO  "PG_W00_Z01",   6, 0, 1, 6,  "127.0.0.1",  9219,    1,    30  ; From Zone
+TUNNEL_INFO  "PG_W00_Z01",   6, 0, 1,               0,      10212
+
+SERVER_INFO  "PG_W00_Z02",   6, 0, 2,20,  "127.0.0.1",   9214,  100,  1700  ; From Client
+SERVER_INFO  "PG_W00_Z02",   6, 0, 2, 8,  "127.0.0.1",  9215,  100,    30  ; From OPTOOL
+SERVER_INFO  "PG_W00_Z02",   6, 0, 2, 6,  "127.0.0.1",  9220,    1,    30  ; From Zone
+TUNNEL_INFO  "PG_W00_Z02",   6, 0, 2,               0,      10214
+
+SERVER_INFO  "PG_W00_Z03",   6, 0, 3,20,  "127.0.0.1",   9216,  100,  1700  ; From Client
+SERVER_INFO  "PG_W00_Z03",   6, 0, 3, 8,  "127.0.0.1",  9217,  100,    30  ; From OPTOOL
+SERVER_INFO  "PG_W00_Z03",   6, 0, 3, 6,  "127.0.0.1",  9221,    1,    30  ; From Zone
+TUNNEL_INFO  "PG_W00_Z03",   6, 0, 3,               0,      10216
+
+SERVER_INFO  "PG_W00_Z04",   6, 0, 4,20,  "127.0.0.1",   9218,  100,  1700  ; From Client
+SERVER_INFO  "PG_W00_Z04",   6, 0, 4, 8,  "127.0.0.1",  9219,  100,    30  ; From OPTOOL
+SERVER_INFO  "PG_W00_Z04",   6, 0, 4, 6,  "127.0.0.1",  9222,    1,    30  ; From Zone
+TUNNEL_INFO  "PG_W00_Z04",   6, 0, 4,               0,      10218
+
+; AccountDB
+SERVER_INFO  "PG_AccDB",     0, 0, 0, 0,  "127.0.0.1",  9000,  100,   100  ; From ALL
+
+; AccountLog ------------------------------------------------------------------------------------
+SERVER_INFO  "PG_ALDB",      1, 0, 0, 0,  "127.0.0.1",  9311,  100,   100  ; From ALL
+
+; Char_DB ---------------------------------------------------------------------------------------
+SERVER_INFO  "PG_W00_CDB",   2, 0, 0, 0,  "127.0.0.1",  9411,  100,   100  ; From ALL
+
+; GameLog_DB ------------------------------------------------------------------------------------
+SERVER_INFO  "PG_W00_GLDB",  3, 0, 0, 0,  "127.0.0.1",  9511,  100,   100  ; From ALL
+
+
+; ODBC-----------------------------------------------------------------------------------------------------------------------------------------
+ODBC_INFO  "Account",        0,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE Account;        SET LOCK_TIMEOUT 5000"  ; world
+ODBC_INFO  "AccountLog",     1,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE AccountLog;     SET LOCK_TIMEOUT 5000"  ; world 
+ODBC_INFO  "Statistics",     2,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE StatisticsData; SET LOCK_TIMEOUT 5000"  ; acccount db
+ODBC_INFO  "OPTool",         3,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE OperatorTool;   SET LOCK_TIMEOUT 5000"  ; account db
+
+; for first world
+ODBC_INFO  "w00_Character",  10,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE w00_Character;  SET LOCK_TIMEOUT 5000"  ; world
+ODBC_INFO  "w00_GameLog",    11,  0,  "DRIVER=SQL Server;SERVER=<snip>;Trusted_Connection=Yes;",  "USE w00_GameLog;    SET LOCK_TIMEOUT 5000"  ; world
+#END
